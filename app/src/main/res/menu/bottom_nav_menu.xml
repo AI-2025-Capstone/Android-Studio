@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/outline_house"
+        android:title="홈" />
+    <item
+        android:id="@+id/navigation_chatbot"
+        android:icon="@drawable/outline_chat"
+        android:title="챗봇" />
+    <item
+        android:id="@+id/navigation_wishlist"
+        android:icon="@drawable/outline_bookmark_heart"
+        android:title="찜 목록" />
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/outline_manufacturing"
+        android:title="설정" />
+</menu>
