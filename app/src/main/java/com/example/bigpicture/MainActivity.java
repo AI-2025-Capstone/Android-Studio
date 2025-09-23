@@ -1,6 +1,8 @@
 package com.example.bigpicture;
 
 import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -11,6 +13,8 @@ import com.example.bigpicture.Wishlist.WishListFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TextView tvrecently, tvnoti, tvmode, tvetc1, tvetc2, tvetc3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,4 +49,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 return true;
             };
+
+
 }
