@@ -32,6 +32,7 @@ import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.maps.android.clustering.ClusterManager;
+import com.example.bigpicture.Settings.RecentItemManager; // 최근 본 매물
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -95,6 +96,13 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
 
         // 개별 마커 클릭 시 BottomSheet 표시 리스너를 설정합니다.
         clusterManager.setOnClusterItemClickListener(item -> {
+            HouseItem clickedHouse = item.getHouseItem();
+
+            // 1. 최근 본 매물 목록에 추가
+            if (getActivity() != null) {
+                RecentItemManager.addRecentItem(getActivity(), clickedHouse);
+            }
+
             HouseDetailsBottomSheetFragment bottomSheet = HouseDetailsBottomSheetFragment.newInstance(item.getHouseItem());
             bottomSheet.show(getChildFragmentManager(), bottomSheet.getTag());
             return true;
