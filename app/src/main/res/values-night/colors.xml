@@ -8,13 +8,13 @@
 
     <color name="text_color_primary">#FFFFFFFF</color>
 
-    <color name="screen_background">#FFFFFF</color>
+    <color name="screen_background">#121212</color>
 
-    <color name="linear_background">#F7F2FF</color>
+    <color name="linear_background">#21134D</color>
 
-    <color name="text_background">#EADDFF</color>
+    <color name="text_background">#1F122E</color>
 
-    <color name="text_primary_color">#000000</color>
+    <color name="text_primary_color">#FFFFFF</color>
 
-    <color name="text_secondary_color">#808080</color>
+    <color name="text_secondary_color">#A0A0A0</color>
 </resources>

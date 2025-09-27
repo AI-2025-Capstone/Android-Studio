@@ -13,20 +13,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.bigpicture.R;
-// NoticeActivity.class 등 새로 만들 Activity들을 import 해야 할 수 있습니다.
 
-// View.OnClickListener를 구현(implements)합니다.
+// View.OnClickListener를 구현
 public class SettingsFragment extends Fragment implements View.OnClickListener {
-
-    // 레이아웃의 TextView들을 담을 변수를 선언합니다.
-    private TextView tvRecentListings;
-    private TextView tvNotices;
-    private TextView tvDarkMode;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // fragment_settings.xml 레이아웃을 화면에 표시하도록 설정합니다.
+        // fragment_settings.xml 레이아웃을 화면에 표시하도록 설정
         return inflater.inflate(R.layout.fragment_settings, container, false);
     }
 
@@ -34,24 +28,24 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // onCreateView에서 만들어진 view를 사용해 TextView 변수들을 초기화합니다.
-        tvRecentListings = view.findViewById(R.id.tvrecently);
-        tvNotices = view.findViewById(R.id.tvnoti);
-        tvDarkMode = view.findViewById(R.id.tvmode);
+        // 레이아웃의 TextView들을 담을 변수를 선언
+        TextView tvRecentListings = view.findViewById(R.id.tvrecently);
+        TextView tvNotices = view.findViewById(R.id.tvnoti);
+        TextView tvDarkMode = view.findViewById(R.id.tvmode);
 
-        // 각 TextView에 클릭 리스너를 설정합니다.
+        // 각 TextView에 클릭 리스너를 설정
         tvRecentListings.setOnClickListener(this);
         tvNotices.setOnClickListener(this);
         tvDarkMode.setOnClickListener(this);
     }
 
-    // 6. 클릭 이벤트가 발생했을 때 호출되는 메서드입니다.
+    // 클릭 이벤트가 발생했을 때 호출되는 메서드
     @Override
     public void onClick(View v) {
         int id = v.getId();
         if (id == R.id.tvrecently) {
             // '최근 본 매물' 클릭 시
-            // Intent를 사용하려면 Activity의 Context가 필요하므로 getActivity()를 사용합니다.
+            // Intent를 사용하려면 Activity의 Context가 필요하므로 getActivity()를 사용
             Intent intent = new Intent(getActivity(), RecentActivity.class);
             startActivity(intent);
 
