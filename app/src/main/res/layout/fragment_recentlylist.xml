@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/screen_background"
-    tools:context=".Settings.SettingsFragment">
+    tools:context=".Settings.RecentActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="24dp"
-        android:gravity="center_horizontal">
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,7 +29,7 @@
                 android:layout_height="110dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="10dp"
-                android:src="@drawable/bigpicture_logo" />/>
+                android:src="@drawable/bigpicture_logo" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -36,44 +37,35 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginBottom="20dp"
                 android:text="최근 본 매물"
-                android:textStyle="bold"
                 android:textColor="@color/text_primary_color"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_margin="16dp"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/settings_linear_background"
+                android:orientation="vertical"
+                android:padding="8dp">
 
-                <LinearLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_recent"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/settings_text_background"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_recent" />
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView_recent"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        tools:listitem="@layout/item_recent" />
+            </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/tv_empty_list"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="100dp"
-                        android:text="최근 본 매물이 없습니다."
-                        android:textColor="@color/text_secondary_color"
-                        android:visibility="gone" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tv_empty_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:text="최근 본 매물이 없습니다."
+                android:textColor="@color/text_secondary_color"
+                android:visibility="gone" />
+
         </LinearLayout>
     </LinearLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -63,7 +63,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
         loadHouseDataFromJson();
 
         // ‼️ 중요: 실제 API 키로 교체
-        String apiKey = "AIzaSyC6D9wrTh1pQw8TGqr9W36kIAzerUTlp1E";
+        String apiKey = "AIzaSyCkh88iqBLrVlBM1IhAniQkZVJr32PzIt8";
         if (!Places.isInitialized()) {
             Places.initialize(requireActivity().getApplicationContext(), apiKey);
         }
